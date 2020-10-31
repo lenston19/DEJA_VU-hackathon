@@ -8,4 +8,3 @@ Talant - deja_vu(); hackaton project
 На компьютере запустить эмулятор Android или iPhone (например, через Android Studio)
 Далее в Visual Studio Code открыть файл main.dart и непосредственно запустить приложение (Run или Run Without Debagging)
 
-На экране эмулятора запустится приложение
