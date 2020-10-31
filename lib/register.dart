@@ -29,7 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Navigator.pop(context);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
+              MaterialPageRoute(builder: (context) => LoginApp()),
             );
           },
         ),
@@ -101,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    MaterialPageRoute(builder: (context) => LoginApp()),
                   );
                 },
               ),
@@ -132,7 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                      MaterialPageRoute(builder: (context) => RegisterApp()),
                     );
                   },
                 ),
@@ -167,7 +167,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
+                      MaterialPageRoute(builder: (context) => LoginApp()),
                     );
                   },
                 ),
@@ -176,6 +176,20 @@ class _RegisterPageState extends State<RegisterPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class RegisterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Register',
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: RegisterPage(),
     );
   }
 }

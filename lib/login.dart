@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register.dart';
+import 'news.dart';
 import 'colors.dart';
 import 'text_field_widget.dart';
 
@@ -68,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) => LoginApp()),
                 );
               },
             ),
@@ -89,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    MaterialPageRoute(builder: (context) => NewsApp()),
                   );
                 },
               ),
@@ -123,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                      MaterialPageRoute(builder: (context) => RegisterApp()),
                     );
                   },
                 ),
@@ -132,6 +133,20 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class LoginApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Login',
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: LoginPage(),
     );
   }
 }
