@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'register.dart';
+import 'colors.dart';
+import 'text_field_widget.dart';
 
 final _usernameController = TextEditingController();
 final _passwordController = TextEditingController();
@@ -16,11 +19,9 @@ class _LoginPageState extends State<LoginPage> {
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
-            SizedBox(height: 80.0),
             Column(
               children: <Widget>[
                 Image.asset('assets/main_logo.png'),
-                SizedBox(height: 22.0),
                 Text(
                   'Добрый день!',
                   style: TextStyle(
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   'Введите свою почту и пароль, чтобы войти',
                   style: TextStyle(
-                    color: Color(0xFF959595),
+                    color: cTextGrey,
                     fontSize: 14.0,
                     fontWeight: FontWeight.w500,
                   ),
@@ -40,20 +41,16 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 26.0),
-            TextField(
+            CustomTextField(
               controller: _usernameController,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email),
-                labelText: 'E-mail',
-              ),
+              icon: Icons.email_outlined,
+              labelText: 'E-mail:',
             ),
             SizedBox(height: 20.0),
-            TextField(
+            CustomTextField(
               controller: _passwordController,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.lock),
-                labelText: 'Password',
-              ),
+              icon: Icons.lock_outline,
+              labelText: 'Пароль:',
               obscureText: true,
             ),
             SizedBox(height: 8.0),
@@ -82,8 +79,10 @@ class _LoginPageState extends State<LoginPage> {
                   'ВОЙТИ',
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Color(0xFFDB2023),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                color: cMain,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50.0),
+                ),
                 minWidth: 180.0,
                 height: 50.0,
                 onPressed: () {
@@ -104,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'Нет аккаунта?',
                     style: TextStyle(
-                      color: Color(0xFF959595),
+                      color: cTextGrey,
                       fontSize: 14.0,
                       fontWeight: FontWeight.w500,
                     ),
@@ -115,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'Зарегистрируйтесь',
                     style: TextStyle(
-                      color: Color(0xFFDB2023),
+                      color: cMain,
                       fontSize: 14.0,
                       fontWeight: FontWeight.w500,
                     ),
@@ -124,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
                     );
                   },
                 ),
