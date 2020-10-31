@@ -94,7 +94,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             );
           },
         ),
-        actions: <Widget>[SizedBox(width: 58.0)],
+        actions: <Widget>[SizedBox(width: 54.0)],
       ),
       body: SafeArea(
         child: ListView(

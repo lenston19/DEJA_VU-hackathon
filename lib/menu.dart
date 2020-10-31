@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'profile.dart';
 import 'news.dart';
 import 'activities.dart';
 
@@ -28,21 +29,30 @@ class MenuDrawer extends StatelessWidget {
               shadowColor: Colors.transparent,
               automaticallyImplyLeading: false,
               centerTitle: true,
-              flexibleSpace: Column(
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 31.0 / 11.0,
-                    child: Image.asset('assets/default_avatar.png'),
-                  ),
-                  SizedBox(height: 14.0),
-                  Text(
-                    'Имя Фамилия',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
+              flexibleSpace: InkWell(
+                child: Column(
+                  children: <Widget>[
+                    AspectRatio(
+                      aspectRatio: 31.0 / 11.0,
+                      child: Image.asset('assets/default_avatar.png'),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 14.0),
+                    Text(
+                      'Имя Фамилия',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfileApp()),
+                  );
+                },
               ),
               actions: <Widget>[
                 IconButton(

@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class CustomTextField extends StatefulWidget {
-  final TextEditingController controller;
-  final String labelText;
-  final IconData icon;
-  final bool obscureText;
+  TextEditingController controller;
+  bool readOnly;
+  bool enabled;
+  String labelText;
+  IconData icon;
+  bool obscureText;
   CustomTextField(
-      {this.controller, this.labelText, this.icon, this.obscureText = false});
+      {this.controller,
+      this.readOnly = false,
+      this.enabled = true,
+      this.labelText,
+      this.icon,
+      this.obscureText = false});
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
