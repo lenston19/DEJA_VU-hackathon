@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "508044814776",
+    "firebase_url": "https://dejavu-hackathon.firebaseio.com",
+    "project_id": "dejavu-hackathon",
+    "storage_bucket": "dejavu-hackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508044814776:android:63baf288cc568a4e68474d",
+        "android_client_info": {
+          "package_name": "com.deja_vu.talant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508044814776-1tfdg63aj5i8rjuf0iemgqggupo09v9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwwhaMNsGb67mM2QED3qdrDFhAUKfLH5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508044814776-1tfdg63aj5i8rjuf0iemgqggupo09v9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

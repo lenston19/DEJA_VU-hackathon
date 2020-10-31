@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:talant/landing.dart';
 import 'register.dart';
 import 'news.dart';
 import 'colors.dart';
@@ -157,7 +158,7 @@ class LoginApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: LandingPage(),
     );
   }
 }
