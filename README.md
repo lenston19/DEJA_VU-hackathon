@@ -1,1 +1,3 @@
-# DEJA_VU-hackathon
+# talant
+
+Talant - deja_vu(); hackaton project
