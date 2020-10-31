@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'menu.dart';
 
-class NewsPage extends StatefulWidget {
+class ActivitiesPage extends StatefulWidget {
   @override
-  _NewsPageState createState() => _NewsPageState();
+  _ActivitiesPageState createState() => _ActivitiesPageState();
 }
 
-class _NewsPageState extends State<NewsPage> {
+class _ActivitiesPageState extends State<ActivitiesPage> {
   List<Card> _buildListCards(int count) {
     List<Card> cards = List.generate(
       count,
@@ -19,7 +19,7 @@ class _NewsPageState extends State<NewsPage> {
             SizedBox(height: 4.0),
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
-              child: Image.asset('assets/news_example.jpg'),
+              child: Image.asset('assets/activities_example.jpg'),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(18.0, 2.0, 18.0, 10.0),
@@ -27,7 +27,7 @@ class _NewsPageState extends State<NewsPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Стартовал всероссийский этап Всероссийских спортивных состязаний',
+                    'Школьный этап всероссийской олимпиады стартует 1 ноября',
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w700,
@@ -42,7 +42,7 @@ class _NewsPageState extends State<NewsPage> {
                       ),
                       SizedBox(width: 2.0),
                       Text(
-                        'Талантливые дети',
+                        'Всероссийская олимпиада школьников',
                         style: TextStyle(color: cTextGrey),
                       ),
                     ],
@@ -50,7 +50,7 @@ class _NewsPageState extends State<NewsPage> {
                   SizedBox(height: 6.0),
                   Container(
                     child: Text(
-                      '13 октября 2020',
+                      '18 октября 2020',
                       style: TextStyle(color: cTextGrey),
                     ),
                     alignment: Alignment.centerRight,
@@ -72,6 +72,15 @@ class _NewsPageState extends State<NewsPage> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         automaticallyImplyLeading: false,
+        title: Center(
+          child: Text(
+            'Мероприятия',
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+        ),
         leading: Builder (
           builder: (BuildContext context) {
             return IconButton(
@@ -85,65 +94,29 @@ class _NewsPageState extends State<NewsPage> {
             );
           },
         ),
-        bottom: TabBar(
-          indicatorColor: Colors.white,
-          isScrollable: true,
-          tabs: <Widget>[
-            Tab(
-              child: Text(
-                'Новости',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'Для вас',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-            ),
-          ],
-        ),
+        actions: <Widget>[SizedBox(width: 58.0)],
       ),
-      body: TabBarView(
-        children: <Widget>[
-          SafeArea(
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              children: _buildListCards(3),
-            ),
-          ),
-          SafeArea(
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              children: _buildListCards(1),
-            ),
-          ),
-        ],
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          children: _buildListCards(3),
+        ),
       ),
       drawer: MenuDrawer(),
     );
   }
 }
 
-class NewsApp extends StatelessWidget {
+class ActivitiesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News',
+      title: 'Activities',
       theme: ThemeData(
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DefaultTabController(
-        length: 2,
-        child: NewsPage(),
-      ),
+      home: ActivitiesPage(),
     );
   }
 }
