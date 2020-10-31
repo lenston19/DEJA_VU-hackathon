@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 import 'colors.dart';
 
 class NewsPage extends StatefulWidget {
@@ -77,7 +78,7 @@ class _NewsPagePageState extends State<NewsPage> {
             Navigator.pop(context);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NewsApp()),
+              MaterialPageRoute(builder: (context) => LoginApp()),
             );
           },
         ),
