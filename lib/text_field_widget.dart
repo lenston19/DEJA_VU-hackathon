@@ -8,7 +8,13 @@ class CustomTextField extends StatefulWidget {
   String labelText;
   IconData icon;
   bool obscureText;
-  CustomTextField({this.controller, this.readOnly = false, this.enabled = true, this.labelText, this.icon, this.obscureText = false});
+  CustomTextField(
+      {this.controller,
+      this.readOnly = false,
+      this.enabled = true,
+      this.labelText,
+      this.icon,
+      this.obscureText = false});
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -37,9 +43,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         labelText: widget.labelText,
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(50.0)
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50.0)),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
           borderSide: BorderSide(

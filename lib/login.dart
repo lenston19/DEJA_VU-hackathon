@@ -1,11 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'register.dart';
+import 'package:talant/landing.dart';
 import 'news.dart';
+import 'register.dart';
 import 'colors.dart';
 import 'text_field_widget.dart';
 
 final _usernameController = TextEditingController();
 final _passwordController = TextEditingController();
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+final FirebaseAuth _auth = FirebaseAuth.instance;
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _formKey,
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -82,11 +88,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 color: cMain,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
+                  borderRadius: BorderRadius.circular(50.0),
                 ),
                 minWidth: 180.0,
                 height: 50.0,
                 onPressed: () {
+                  // if (_formKey.currentState.validate()) {
+                  //   _signinWithEmailPassword();
+                  // }
                   Navigator.pop(context);
                   Navigator.push(
                     context,
@@ -138,6 +147,9 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class LoginApp extends StatelessWidget {
+  final User user;
+
+  const LoginApp({Key key, this.user}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -146,7 +158,26 @@ class LoginApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: LandingPage(),
     );
+  }
+}
+
+void _signinWithEmailPassword() async {
+  try {
+    final User user = (await _auth.signInWithEmailAndPassword(
+            email: _usernameController.text,
+            password: _passwordController.text))
+        .user;
+    if (!user.emailVerified) {
+      await user.sendEmailVerification();
+    }
+    // Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+    //   return LoginApp(user: user);
+    // }));
+  } catch (e) {
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Failed to sign in with email and password")));
+    print(e);
   }
 }
