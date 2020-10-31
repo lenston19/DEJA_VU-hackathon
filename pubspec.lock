@@ -107,11 +107,7 @@ packages:
     source: hosted
     version: "0.3.1+2"
   firebase_core:
-<<<<<<< Updated upstream
-    dependency: "direct main"
-=======
     dependency: transitive
->>>>>>> Stashed changes
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
@@ -146,8 +142,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< Updated upstream
-=======
   fluttertoast:
     dependency: "direct main"
     description:
@@ -155,7 +149,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.1.1"
->>>>>>> Stashed changes
   http:
     dependency: transitive
     description:
@@ -226,8 +219,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
-<<<<<<< Updated upstream
-=======
   provider:
     dependency: "direct main"
     description:
@@ -235,7 +226,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.3.2+2"
->>>>>>> Stashed changes
   quiver:
     dependency: transitive
     description:
@@ -306,8 +296,4 @@ packages:
     version: "2.1.0-nullsafety.3"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
-<<<<<<< Updated upstream
-  flutter: ">=1.12.13+hotfix.5 <2.0.0"
-=======
   flutter: ">=1.16.0 <2.0.0"
->>>>>>> Stashed changes

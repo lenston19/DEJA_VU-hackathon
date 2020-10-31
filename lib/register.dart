@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
 import 'login.dart';
-import 'news.dart';
 import 'colors.dart';
 import 'text_field_widget.dart';
 

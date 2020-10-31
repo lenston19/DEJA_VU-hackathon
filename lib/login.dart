@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:talant/landing.dart';
-import 'register.dart';
 import 'news.dart';
+import 'register.dart';
 import 'colors.dart';
 import 'text_field_widget.dart';
 
@@ -93,14 +93,14 @@ class _LoginPageState extends State<LoginPage> {
                 minWidth: 180.0,
                 height: 50.0,
                 onPressed: () {
-                  if (_formKey.currentState.validate()) {
-                    _signinWithEmailPassword();
-                  }
-                  // Navigator.pop(context);
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => NewsApp()),
-                  // );
+                  // if (_formKey.currentState.validate()) {
+                  //   _signinWithEmailPassword();
+                  // }
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NewsApp()),
+                  );
                 },
               ),
             ),

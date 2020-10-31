@@ -31,6 +31,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         }
         return null;
       },
+      readOnly: widget.readOnly,
+      enabled: widget.enabled,
       decoration: InputDecoration(
         prefixIcon: Container(
           width: 70.0,

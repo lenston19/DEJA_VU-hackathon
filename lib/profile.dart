@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ),
-        leading: Builder (
+        leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(
@@ -68,13 +68,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(width: 20.0),
                   Column(
                     children: <Widget>[
-                        Text(
-                          'Имя Фамилия',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w800,
-                          ),
+                      Text(
+                        'Имя Фамилия',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w800,
                         ),
+                      ),
                       SizedBox(height: 2.0),
                       Text(
                         'example@email.com',
