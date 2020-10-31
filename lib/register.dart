@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'news.dart';
 import 'colors.dart';
 import 'text_field_widget.dart';
 
@@ -101,7 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginApp()),
+                    MaterialPageRoute(builder: (context) => NewsApp()),
                   );
                 },
               ),
