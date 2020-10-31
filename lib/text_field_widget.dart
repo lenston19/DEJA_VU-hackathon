@@ -6,7 +6,8 @@ class CustomTextField extends StatefulWidget {
   final String labelText;
   final IconData icon;
   final bool obscureText;
-  CustomTextField({this.controller, this.labelText, this.icon, this.obscureText = false});
+  CustomTextField(
+      {this.controller, this.labelText, this.icon, this.obscureText = false});
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -15,8 +16,14 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: widget.controller,
+      validator: (String val) {
+        if (val.isEmpty) {
+          return 'Поле не должно быть пустым!';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         prefixIcon: Container(
           width: 70.0,
@@ -27,9 +34,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         labelText: widget.labelText,
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(50.0)
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50.0)),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
           borderSide: BorderSide(

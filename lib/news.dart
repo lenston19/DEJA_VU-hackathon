@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'menu.dart';
@@ -8,6 +9,8 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   List<Card> _buildListCards(int count) {
     List<Card> cards = List.generate(
       count,
@@ -68,11 +71,12 @@ class _NewsPageState extends State<NewsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        leading: Builder (
+        leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(
@@ -132,6 +136,9 @@ class _NewsPageState extends State<NewsPage> {
 }
 
 class NewsApp extends StatelessWidget {
+  final User user;
+
+  const NewsApp({Key key, this.user}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

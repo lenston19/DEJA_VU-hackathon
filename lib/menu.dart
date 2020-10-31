@@ -4,7 +4,8 @@ import 'news.dart';
 import 'activities.dart';
 
 class MenuSeparator extends StatelessWidget {
-  @override Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
@@ -47,7 +48,6 @@ class MenuDrawer extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.exit_to_app),
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.pop(context);
                     Navigator.push(
                       context,
@@ -122,10 +122,10 @@ class MenuDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ActivitiesApp()),
-                );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ActivitiesApp()),
+              );
             },
           ),
           MenuSeparator(),
