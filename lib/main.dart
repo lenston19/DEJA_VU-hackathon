@@ -3,5 +3,5 @@ import 'login.dart';
 import 'register.dart';
 
 void main() => runApp(
-    LoginApp()
+    LoginApp(),
 );
